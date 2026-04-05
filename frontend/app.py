@@ -227,46 +227,13 @@ st.markdown("""
 preset_col1, preset_col2, preset_col3 = st.columns(3, gap="small")
 
 with preset_col1:
-    if st.button("🔴 Critical", key="preset_critical"):
-        st.session_state.batch_id = "BATCH_2024_013"
-        st.session_state.temperature = 14.5
-        st.session_state.humidity = 88
-        st.session_state.location = "Souk Sebt Storage"
-        st.session_state.product_type = "Strawberries"
-        st.session_state.text_report = "Strong odour detected, contamination near pallet 3"
-        st.session_state.visual_report = "Fungus growth on 20% of items, leaking boxes"
-        st.session_state.vibration = 9.8
-        st.session_state.co2 = 1200
-        st.session_state.delay_hours = 8
-        st.rerun()
+  st.button("🔴 Critical", key="preset_critical", disabled=True)
 
 with preset_col2:
-    if st.button("🟡 Borderline", key="preset_borderline"):
-        st.session_state.batch_id = "BATCH_2024_027"
-        st.session_state.temperature = 8.5
-        st.session_state.humidity = 74
-        st.session_state.location = "Agadir Port Hub"
-        st.session_state.product_type = "Tomato"
-        st.session_state.text_report = "Slight odour on arrival, packaging intact"
-        st.session_state.visual_report = "Minor bruise on 8% of items"
-        st.session_state.vibration = 5.2
-        st.session_state.co2 = 820
-        st.session_state.delay_hours = 3
-        st.rerun()
+  st.button("🟡 Borderline", key="preset_borderline", disabled=True)
 
 with preset_col3:
-    if st.button("🟢 Good", key="preset_clean"):
-        st.session_state.batch_id = "BATCH_2024_041"
-        st.session_state.temperature = 5.0
-        st.session_state.humidity = 60
-        st.session_state.location = "Casablanca Cold Chain"
-        st.session_state.product_type = "Citrus"
-        st.session_state.text_report = "No issues detected"
-        st.session_state.visual_report = "No visible damage"
-        st.session_state.vibration = 2.1
-        st.session_state.co2 = 450
-        st.session_state.delay_hours = 0.5
-        st.rerun()
+  st.button("🟢 Good", key="preset_clean", disabled=True)
 
 st.markdown('<div class="panel"><div class="panel-title">Batch Input</div></div>', unsafe_allow_html=True)
 
@@ -302,7 +269,7 @@ with col2:
     st.session_state.humidity = st.number_input(
         "Humidity (%)",
         value=int(st.session_state.humidity),
-        min_value=30,
+        min_value=0,
         max_value=100,
         step=1,
         key="humidity_input"
