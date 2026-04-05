@@ -1,0 +1,13 @@
+[theme]
+base = "dark"
+backgroundColor = "#0a0f0d"
+secondaryBackgroundColor = "#0f1a14"
+primaryColor = "#00ff88"
+textColor = "#c8e8d4"
+font = "monospace"
+
+[client]
+showErrorDetails = true
+
+[logger]
+level = "warning"
